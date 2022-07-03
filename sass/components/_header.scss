@@ -1,0 +1,102 @@
+//nav
+.nav-completo {
+    background-image: url("#{$baseDir}img/banner-home.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: $color-white;
+    padding: 60px 90px 120px;
+    #logo-container img {
+        max-width: 200px;
+    }
+    .telefono {
+        margin-left: auto;
+    }
+
+    .first-nav {
+        column-gap: 30px;
+        .btn-login {
+            border: 1px solid $color-white;
+            padding: 10px;
+            cursor: pointer;
+        }
+    }
+    .text-header {
+        margin-top: 120px;
+        h3 {
+            font-weight: 700;
+            font-size: 80px;
+            margin: 0 2px
+        }
+    }
+    .schedule {
+        margin-left: auto;
+        .title {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px $color-white dotted;
+            h4 {
+                font-size: 14px;
+                font-weight: 400;
+            }
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            column-gap: 20px;
+            .info {
+                h4.type {
+                    margin: 8px 0 2px;
+                }
+                .info-type {
+                    margin: 2
+                    px 0 2px;
+                }
+            }
+        }
+    }
+}
+
+//dropdown
+.dropbtn {
+    background-color: transparent;
+    color: white;
+    font-size: 37px;
+    border: none;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  
+    a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+  
+      &:hover {
+        background-color: #ddd;
+      }
+    }
+  }
+  
+  .dropdown:hover {
+    .dropdown-content {
+      display: block;
+    }
+  
+    .dropbtn {
+      background-color: #f1f1f131;
+    }
+  }

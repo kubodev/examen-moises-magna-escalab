@@ -1,0 +1,7 @@
+.row {
+    display: flex;
+    align-items: center;
+    &.fila {
+        flex-wrap: nowrap;
+    }
+}

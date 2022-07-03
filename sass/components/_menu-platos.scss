@@ -1,0 +1,73 @@
+.menu-platos {
+    background-image: url("#{$baseDir}img/Blueberry.png");
+    background-repeat: no-repeat;
+    background-position: right  -3px;
+    background-size: 300px;
+    padding: 100px 138px;
+    .category {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px 0 40px;
+        .title {
+            margin: 0;
+            font-size: 50px;
+        }
+        .subtitle {
+            font-size: 12px;
+            margin: 0;
+        }
+        .content-menu {
+            margin-top: 50px;
+            display: flex;
+            flex-wrap: nowrap;
+            column-gap: 40px;
+            img {
+                width: 400px;
+                height: 500px;
+                object-fit: cover;
+            }
+            .list-product {
+                //importante para desaparecer productos
+                &.incomplete {
+                    .one-product {
+                        &:nth-child(n+4) {
+                            display: none;
+                        }
+                    }
+                }
+                .one-product {
+                    display: flex;
+                    flex-direction: column;
+                    .price {
+                        font-size: 20px;
+                        font-weight: 700;
+                        align-self: flex-end;
+                        margin: 5px 0;
+                    }
+                    .name-product {
+                        border-top: 1px $color-black dotted;
+                        margin: 0;
+                        padding: 10px 0;
+                        font-size: 40px;
+                        font-weight: 700;
+                        line-height: 1;
+                    }
+                    .description-product {
+                        margin: 0;
+                        font-size: 12px;
+                    }
+                }
+                .btn-vermas {
+                    border: 1px solid $color-black;
+                    padding: 5px 20px;
+                    width: fit-content;
+                    float: right;
+                    font-size: 17px;
+                    font-weight: 600;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
