@@ -1,0 +1,101 @@
+.ordenes {
+    .nav-completo {
+        background-image: url("#{$baseDir}img/banner-pedidos.png");
+        .first-nav {
+            .login {
+                margin-left: auto;
+            }
+        }
+        .text-header {
+            justify-content: center;
+
+        }
+    }
+    .ordenes-contenido {
+        padding: 100px 138px;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 10px;
+        .one-order {
+            width: 47%;
+            padding: 10px;
+            .mesero {
+                display: flex;
+                flex-direction: row;
+                column-gap: 8px;
+                margin-bottom: 30px;
+                img {
+                    width: 60px;
+                    height: 60px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+            }
+            .info-mesa {
+                .name-mesa {
+                    font-size: 30px;
+                    font-weight: 700;
+                    border-bottom: 1px $color-black dotted;
+                    padding: 10px 0;
+                }
+                .descrip-mesa {
+                    margin-top: 20px;
+                    p {
+                        margin: 0;
+                    }
+                }
+            }
+            .btn-entrega {
+                margin-top: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+    //estilos formularios
+    .formulario-pedido {
+        background-color: $color-form;
+        background-image: url(../../img/Mint.png);
+        background-repeat: no-repeat;
+        background-position: left 30px;
+        background-size: 300px;
+        padding: 100px 138px;
+        .products-individual {
+            width: 100%;
+        }
+        h3 {
+            font-size: 50px;
+            text-align: center;
+        }
+        .formulario-pedido-form {
+            width: 100%;
+            input[name=nombreMesa] {
+                width: 100%;
+                
+            }
+            input[name=producto] {
+                width: 59%;
+            }
+            input[name=cantidad] {
+                width: 30%;
+            }
+            input {
+                height: 50px;
+                margin-bottom: 20px;
+                background-color: transparent;
+                padding: 0 20px;
+            }
+            input.addProducts {
+                width: 100%;
+                cursor: pointer;
+            }
+            input.createPedido {
+                width: 100%;
+                background-color: $color-form-btn;
+                color: $color-white;
+                cursor: pointer;
+            }
+        }
+    }
+}

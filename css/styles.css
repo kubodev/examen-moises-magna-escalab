@@ -430,6 +430,8 @@ html {
   border: 1px solid #ffffff;
   padding: 10px;
   cursor: pointer;
+  color: #ffffff;
+  text-decoration: none;
 }
 .nav-completo .text-header {
   margin-top: 120px;
@@ -565,6 +567,173 @@ html {
   font-size: 17px;
   font-weight: 600;
   cursor: pointer;
+}
+
+.modal-contenido {
+  background-color: #EBF0E4;
+  width: 300px;
+  padding: 10px 20px;
+  margin: 20% auto;
+  position: relative;
+}
+.modal-contenido h3 {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 0;
+}
+
+.login-user input {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+.login-user input[type=submit] {
+  background-color: #5E6600;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 1s;
+}
+
+#miModal:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.ordenes .nav-completo {
+  background-image: url("../../img/banner-pedidos.png");
+}
+.ordenes .nav-completo .first-nav .login {
+  margin-left: auto;
+}
+.ordenes .nav-completo .text-header {
+  justify-content: center;
+}
+.ordenes .ordenes-contenido {
+  padding: 100px 138px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 10px;
+}
+.ordenes .ordenes-contenido .one-order {
+  width: 47%;
+  padding: 10px;
+}
+.ordenes .ordenes-contenido .one-order .mesero {
+  display: flex;
+  flex-direction: row;
+  column-gap: 8px;
+  margin-bottom: 30px;
+}
+.ordenes .ordenes-contenido .one-order .mesero img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.ordenes .ordenes-contenido .one-order .info-mesa .name-mesa {
+  font-size: 30px;
+  font-weight: 700;
+  border-bottom: 1px #000000 dotted;
+  padding: 10px 0;
+}
+.ordenes .ordenes-contenido .one-order .info-mesa .descrip-mesa {
+  margin-top: 20px;
+}
+.ordenes .ordenes-contenido .one-order .info-mesa .descrip-mesa p {
+  margin: 0;
+}
+.ordenes .ordenes-contenido .one-order .btn-entrega {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ordenes .formulario-pedido {
+  background-color: #EBF0E4;
+  background-image: url(../../img/Mint.png);
+  background-repeat: no-repeat;
+  background-position: left 30px;
+  background-size: 300px;
+  padding: 100px 138px;
+}
+.ordenes .formulario-pedido .products-individual {
+  width: 100%;
+}
+.ordenes .formulario-pedido h3 {
+  font-size: 50px;
+  text-align: center;
+}
+.ordenes .formulario-pedido .formulario-pedido-form {
+  width: 100%;
+}
+.ordenes .formulario-pedido .formulario-pedido-form input[name=nombreMesa] {
+  width: 100%;
+}
+.ordenes .formulario-pedido .formulario-pedido-form input[name=producto] {
+  width: 59%;
+}
+.ordenes .formulario-pedido .formulario-pedido-form input[name=cantidad] {
+  width: 30%;
+}
+.ordenes .formulario-pedido .formulario-pedido-form input {
+  height: 50px;
+  margin-bottom: 20px;
+  background-color: transparent;
+  padding: 0 20px;
+}
+.ordenes .formulario-pedido .formulario-pedido-form input.addProducts {
+  width: 100%;
+  cursor: pointer;
+}
+.ordenes .formulario-pedido .formulario-pedido-form input.createPedido {
+  width: 100%;
+  background-color: #5E6600;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.usuarios .nav-completo {
+  background-image: url("../../img/banner-iniciar-sesion.png");
+}
+.usuarios .nav-completo .first-nav .login {
+  margin-left: auto;
+}
+.usuarios .users-list {
+  padding: 138px 50px;
+}
+.usuarios .users-list .one-user {
+  display: flex;
+  width: 100%;
+  margin: 30px 0;
+}
+.usuarios .users-list .one-user img {
+  width: 40%;
+  max-height: 300px;
+  object-fit: cover;
+}
+.usuarios .users-list .one-user .info-user {
+  width: 60%;
+  padding-left: 30px;
+}
+.usuarios .users-list .one-user .info-user .name, .usuarios .users-list .one-user .info-user .tipo, .usuarios .users-list .one-user .info-user .compleanios, .usuarios .users-list .one-user .info-user .email, .usuarios .users-list .one-user .info-user .tel {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 5px 0;
+}
+.usuarios .users-list .one-user .info-user .email, .usuarios .users-list .one-user .info-user .tel {
+  color: #9CAA00;
 }
 
 /*# sourceMappingURL=styles.css.map */

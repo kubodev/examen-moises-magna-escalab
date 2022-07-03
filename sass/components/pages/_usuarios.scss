@@ -1,0 +1,36 @@
+.usuarios { 
+    .nav-completo {
+        background-image: url("#{$baseDir}img/banner-iniciar-sesion.png");
+        .first-nav {
+            .login {
+                margin-left: auto;
+            }
+        }
+
+    }
+    .users-list {
+        padding: 138px 50px;
+        .one-user {
+            display: flex;
+            width: 100%;
+            margin: 30px 0;
+            img {
+                width: 40%;
+                max-height: 300px;
+                object-fit: cover;
+            }
+            .info-user {
+                width: 60%;
+                padding-left: 30px;
+                .name,.tipo,.compleanios,.email,.tel {
+                    font-size: 28px;
+                    font-weight: 700;
+                    margin: 5px 0;
+                }
+                .email,.tel {
+                    color: $color-text-user;
+                }
+            }
+        }
+    }
+}

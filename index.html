@@ -27,7 +27,7 @@
           <p>+86 852 346 000</p>
         </div>
         <div class="login">
-          <p class="btn-login">Iniciar sesión</p>
+          <a href="#miModal" class="btn-login">Iniciar sesión</a>
         </div>
       </div>
       <div class="row fila text-header">
@@ -151,7 +151,17 @@
 
 
 
-
+    <div id="miModal" class="modal">
+      <div class="modal-contenido">
+        <a href="#">X</a>
+        <h3>Acceso Trabajadores</h3>
+        <form action="#" method="post" class="login-user">
+          <input type="text" placeholder="Usuario" name="user" >
+          <input type="password" name="password" id="pass" placeholder="Contraseña">
+          <input type="submit" value="Accede">
+        </form>
+      </div>  
+    </div>
 
     <script type="module" src="js/init.js"></script>
   </body>
