@@ -1,19 +1,12 @@
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-  }
-  
-  // Close the dropdown if the user clicks outside of it
-  window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
-      }
-    }
-  }
+import { menu } from "./api.js";
+import {getInfo} from "./services.js";
+import {setMenu} from "./showmenu.js";
+
+const consulta = async (menuarg) => {
+    console.log(menuarg);
+    const objetoMenu = await getInfo(menuarg);
+    setMenu(objetoMenu);
+
+}
+
+consulta(menu);

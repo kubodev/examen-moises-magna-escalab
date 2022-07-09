@@ -1,0 +1,1 @@
+export const divMenu = document.querySelector('#menu-platos');
