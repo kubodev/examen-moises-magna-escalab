@@ -8,6 +8,9 @@ export const setMenu =  (listMenu) => {
     
     const menuListo = array.map(category => {
         const nameCategory = category[0] == 'jugos-bebidas'? 'Jugos y Bebidas' : category[0];
+        const largoCar = category[1].length;
+
+        const verMas = largoCar > 2 ? '<p class="btn-vermas">Ver más</p>': '';
 
         const platos2 = (arrayPlatos) => {
             let htmlPlatos  = "";
@@ -31,7 +34,7 @@ export const setMenu =  (listMenu) => {
                 <img src="${category[1][0].img}" alt="" >
                 <div class="list-product incomplete">
                     ${platos2(category[1])}
-                    <p class="btn-vermas">Ver más</p>
+                    ${verMas}
                 </div>
             </div>
         </div>`;

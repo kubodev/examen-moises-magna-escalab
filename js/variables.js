@@ -5,3 +5,5 @@ export const user = document.querySelector('#miModal #user');
 export const pass = document.querySelector('#miModal #pass');
 
 export const formLogin = document.querySelector('#miModal #login-user');
+
+export const divUsers = document.querySelector('#users-list');

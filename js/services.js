@@ -26,3 +26,23 @@ export const postInfo = async (url, data) => {
 
     return info;
 }
+
+export const getInfoToken = async (url, token) => {
+
+
+    const response = await fetch(url, {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${token}`
+          }
+    });
+
+    if (!response.ok) {
+        const message = `Ha ocurrido un error: ${response.status}`;
+        throw new Error(message);
+    }
+
+    const info = await response.json();
+
+    return info;
+}
