@@ -31,6 +31,9 @@ export const logSubmit = async (event) => {
     
 
     window.localStorage.setItem('foodzero', JSON.stringify(tokenCustom) );
+
+    console.log();
+    window.location.href =  "/pages/ordenes.html";
 }
 
 
