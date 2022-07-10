@@ -11,8 +11,6 @@ export const logSubmit = async (event) => {
         return console.log("algo vacio");
     }
 
-    console.log(user.value,pass.value);
-
     const infoLogin = {
         "client_id": user.value,
         "client_secret": pass.value,
@@ -25,11 +23,14 @@ export const logSubmit = async (event) => {
     const typeuser = await JSON.parse(atob(tokenifo.access_token.split('.')[1])).roles[0];
 
 
-    console.log(typeof(token),token,typeof(typeuser),typeuser);
+    const tokenCustom = {
+        type: typeuser,
+        tokenPost: token
+    };
 
     
 
-   // window.localStorage.setItem('foodzero', );
+    window.localStorage.setItem('foodzero', JSON.stringify(tokenCustom) );
 }
 
 
