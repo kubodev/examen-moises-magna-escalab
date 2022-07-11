@@ -1,7 +1,7 @@
 import {getInfoToken} from "../services.js";
 import {users} from "../api.js";
 import {setUsers} from "../usuarios/showusers.js";
-import {valAdmin} from "../validacion.js";
+import {valAdmin, loginCerrarSession, btnMenu} from "../validacion.js";
 
 
 
@@ -16,3 +16,5 @@ const getUsers = async () => {
 }
 
 getUsers();
+loginCerrarSession();
+btnMenu();

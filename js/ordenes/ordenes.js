@@ -1,7 +1,7 @@
 import {getInfoToken} from "../services.js";
-import {users} from "../api.js";
-import {setUsers} from "../usuarios/showusers.js";
-import {valUser} from "../validacion.js";
+import {orders, tables} from "../api.js";
+import {setOrders} from "./showOrdenes.js"
+import {valUser, btnMenu, loginCerrarSession} from "../validacion.js";
 
 
 
@@ -9,10 +9,12 @@ import {valUser} from "../validacion.js";
 
 
 
-const getUsers = async () => {
+const getOrders = async () => {
     const tokengetLS = valUser();
-    const listUser = await getInfoToken(users,tokengetLS);
-    setUsers(listUser);
+    const listOrders = await getInfoToken(orders,tokengetLS);
+    setOrders(listOrders);
 }
 
-getUsers();
+getOrders();
+loginCerrarSession();
+btnMenu();

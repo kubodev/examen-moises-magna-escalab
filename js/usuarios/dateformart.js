@@ -53,3 +53,16 @@ export const setDate = (fecha) => {
 
     return fechLista;
 }
+
+export const SetHora = (fecha) => {
+    const time = fecha;
+    const date = new Date(time);
+
+    const hora = date.getHours();
+    const minutes = date.getMinutes();
+
+    const horaLista = `${hora}:${minutes}`;
+
+    return horaLista;
+
+}

@@ -1,3 +1,5 @@
+import {boxLogin} from "./variables.js";
+
 export const valAdmin = () => {
 
     const token = window.localStorage.getItem('foodzero');
@@ -9,7 +11,12 @@ export const valAdmin = () => {
     const tokenObjt = JSON.parse(token);
     //comprobamos el tipo de usuario
     const typeUserToken = tokenObjt.type;
-    if(!typeUserToken == 'admin') {
+
+
+    const tipoCorrecto = typeUserToken === 'admin';
+    console.log(tipoCorrecto);
+    if(!tipoCorrecto) {
+        console.log("deberia estar aqui")
         window.location.href =  "/index.html";
     }
 
@@ -30,7 +37,9 @@ export const valUser = () => {
     const tokenObjt = JSON.parse(token);
     //comprobamos el tipo de usuario
     const typeUserToken = tokenObjt.type;
-    if(!typeUserToken == 'admin' || !typeUserToken == 'user') {
+
+    const tipoCorrecto = typeUserToken === 'admin' || typeUserToken === 'user';
+    if(!tipoCorrecto) {
         window.location.href =  "/index.html";
     }
 
@@ -38,4 +47,33 @@ export const valUser = () => {
 
     return tokenLocalStorage;
 
+}
+
+export const loginCerrarSession = () => {
+    const token = window.localStorage.getItem('foodzero');
+
+    let btnLogin = '';
+
+    if(!token) {
+        btnLogin = '<a href="#miModal" class="btn-login">Iniciar sesión</a>';
+    } else {
+        btnLogin = '<a href="#" class="btn-login" id="cerrarSesion">Cerrar sesión</a>';
+    }
+
+    boxLogin.innerHTML = btnLogin;
+}
+
+export const btnMenu = () => {
+    const cerrarSesion = document.querySelector('#cerrarSesion');
+
+    if(!cerrarSesion) {
+        return
+    }
+
+    cerrarSesion.addEventListener('click', () => {
+        window.localStorage.removeItem('foodzero');
+        const btnLogin = '<a href="#miModal" class="btn-login">Iniciar sesión</a>';
+        boxLogin.innerHTML = btnLogin;
+        window.location.href =  "/index.html";
+    });
 }
