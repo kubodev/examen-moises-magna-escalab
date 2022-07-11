@@ -10,7 +10,7 @@ export const setOrders = async (listOrders) => {
 
     const aux = listOrders; 
     const array = Object.entries(aux);
-    //const menuCompleto = await getInfo(menu);
+    const menuCompleto = await getInfo(menu);
 
     
     
@@ -43,12 +43,14 @@ export const setOrders = async (listOrders) => {
         const idOrder = orderOne.id;
         const numMesa = orderOne.table;
 
-        /*
+        
         const aux2 = menuCompleto; 
         const array2 = Object.entries(aux2);
-        const menuCompletoListo =  array2.find( c => c.id == 2);
-        */
+        const menuCompletoListo =  array2.findIndex( c => c[1].id == 2);
+        
 
+        //Aqui estooooooy
+        console.log(menuCompletoListo);
 
         const platos2 = (arrayPlatos) => {
             let htmlPlatos  = "";

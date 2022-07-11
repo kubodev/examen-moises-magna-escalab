@@ -11,3 +11,5 @@ export const divUsers = document.querySelector('#users-list');
 export const boxLogin = document.querySelector('.login');
 
 export const divOrders = document.querySelector('#orders-content');
+
+export const selectTables = document.querySelector('#mesaSelect');

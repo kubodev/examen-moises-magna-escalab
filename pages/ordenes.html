@@ -33,49 +33,13 @@
       </div>
     </nav>
     <section class="ordenes-contenido" id="orders-content">
-      <div class="one-order">
-        <div class="mesero">
-          <img src="http://placekitten.com/200/300" alt="" >
-          <p class="name-mesero">Dua Lipa</p>
-          <p class="fecha">October 17,2021</p>
-          <p class="hora">3:33 pm</p>
-          <p class="id">ID: 325</p>
-        </div>
-        <div class="info-mesa">
-          <div class="name-mesa">Mesa 4</div>
-          <div class="descrip-mesa">
-            <p>Papas Bravas: 1</p>
-            <p>Nizarda: 2</p>
-          </div>
-          <div class="btn-entrega">
-            <p class="btn-entrega-mesa">Marcar como entregada</p><i class="material-icons">arrow_forward</i>
-          </div>
-        </div>
-      </div>
-      <div class="one-order">
-        <div class="mesero">
-          <img src="http://placekitten.com/200/300" alt="" >
-          <p class="name-mesero">Dua Lipa</p>
-          <p class="fecha">October 17,2021</p>
-          <p class="hora">3:33 pm</p>
-          <p class="id">ID: 325</p>
-        </div>
-        <div class="info-mesa">
-          <div class="name-mesa">Mesa 4</div>
-          <div class="descrip-mesa">
-            <p>Papas Bravas: 1</p>
-            <p>Nizarda: 2</p>
-          </div>
-          <div class="btn-entrega">
-            <p class="btn-entrega-mesa">Marcar como entregada</p><i class="material-icons">arrow_forward</i>
-          </div>
-        </div>
-      </div>
     </section>
     <div class="formulario-pedido">
       <h3>Nuevo pedido</h3>
       <form action="" method="post" class="formulario-pedido-form">
-        <input type="text" placeholder="Mesa" name="nombreMesa">
+        <select name="mesa" id="mesaSelect">
+          <option value="-1">Mesas disponibles</option>
+        </select>
         <div class="products-individual">
           <input type="text" placeholder="Producto" name="producto">
           <input type="text" placeholder="Cantidad" name="cantidad">
