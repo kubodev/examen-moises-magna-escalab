@@ -80,11 +80,14 @@
             input[name=cantidad] {
                 width: 30%;
             }
-            input {
+            input, select {
                 height: 50px;
                 margin-bottom: 20px;
                 background-color: transparent;
                 padding: 0 20px;
+            }
+            select {
+                width: 100%;
             }
             input.addProducts {
                 width: 100%;

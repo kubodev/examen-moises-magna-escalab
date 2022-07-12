@@ -697,11 +697,14 @@ html {
 .ordenes .formulario-pedido .formulario-pedido-form input[name=cantidad] {
   width: 30%;
 }
-.ordenes .formulario-pedido .formulario-pedido-form input {
+.ordenes .formulario-pedido .formulario-pedido-form input, .ordenes .formulario-pedido .formulario-pedido-form select {
   height: 50px;
   margin-bottom: 20px;
   background-color: transparent;
   padding: 0 20px;
+}
+.ordenes .formulario-pedido .formulario-pedido-form select {
+  width: 100%;
 }
 .ordenes .formulario-pedido .formulario-pedido-form input.addProducts {
   width: 100%;
