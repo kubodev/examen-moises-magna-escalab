@@ -15,3 +15,5 @@ export const divOrders = document.querySelector('#orders-content');
 export const selectTables = document.querySelector('#mesaSelect');
 
 export const formOrders = document.querySelector('#formulario-pedido-form');
+
+export const errorDiv = document.querySelector('.error-form');

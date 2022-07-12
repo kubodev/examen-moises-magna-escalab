@@ -1,4 +1,4 @@
-import {user, pass, formLogin} from "../variables.js";
+import {user, pass, errorDiv} from "../variables.js";
 import {postInfo} from "../services.js";
 import { login } from "../api.js";
 
@@ -8,7 +8,33 @@ export const logSubmit = async (event) => {
     event.preventDefault();
 
     if(user.value == "" ||  pass.value == "") {
-        return console.log("algo vacio");
+    const textError = errorDiv.innerHTML = '<p>Ingresa Usuario y contraseña</p>';
+
+        return textError;
+    }
+
+    const intento = window.localStorage.getItem('intento');
+    //si no existe token te devuelve al home
+    if(!intento) {
+        window.localStorage.setItem('intento', '1' );
+        errorDiv.innerHTML = '<p>Usuario y/o contraseña Erronea:<br>quedan 2 intentos</p>'
+    } else {
+        let intentoInt = parseInt(intento);
+        let sumaIntento = intentoInt + 1;
+        errorDiv.innerHTML = `<p>Usuario y/o contraseña Erronea:<br>quedan ${3 - sumaIntento} intentos</p>`;
+        
+        if(sumaIntento >= 3) {
+            const date = new Date();
+
+
+            window.localStorage.setItem('intento', 'bloqueado' );
+            window.localStorage.setItem('tiempo',  );
+        } else {
+            
+            
+            errorDiv.innerHTML = `<p>Usuario y/o contraseña Erronea:<br>quedan ${3 - sumaIntento} intentos</p>`;
+            window.localStorage.setItem('intento', sumaIntento.toString() );
+        }
     }
 
     const infoLogin = {

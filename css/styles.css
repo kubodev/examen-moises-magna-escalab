@@ -581,6 +581,16 @@ html {
   text-align: center;
   margin-top: 0;
 }
+.modal-contenido .error-form {
+  background-color: rgb(241, 5, 5);
+  color: #ffffff;
+  text-align: center;
+}
+.modal-contenido .error-form p {
+  margin: 0;
+  padding: 8px;
+  margin: 8px 0;
+}
 
 .login-user input {
   width: 100%;

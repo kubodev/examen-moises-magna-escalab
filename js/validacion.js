@@ -14,9 +14,9 @@ export const valAdmin = () => {
 
 
     const tipoCorrecto = typeUserToken === 'admin';
-    console.log(tipoCorrecto);
+
     if(!tipoCorrecto) {
-        console.log("deberia estar aqui")
+
         window.location.href =  "/index.html";
     }
 
@@ -55,7 +55,7 @@ export const loginCerrarSession = () => {
     let btnLogin = '';
 
     if(!token) {
-        btnLogin = '<a href="#miModal" class="btn-login">Iniciar sesión</a>';
+        btnLogin = '<a href="#miModal" class="btn-login" id="login">Iniciar sesión</a>';
     } else {
         btnLogin = '<a href="#" class="btn-login" id="cerrarSesion">Cerrar sesión</a>';
     }
@@ -72,7 +72,7 @@ export const btnMenu = () => {
 
     cerrarSesion.addEventListener('click', () => {
         window.localStorage.removeItem('foodzero');
-        const btnLogin = '<a href="#miModal" class="btn-login">Iniciar sesión</a>';
+        const btnLogin = '<a href="#miModal" class="btn-login" id="login">Iniciar sesión</a>';
         boxLogin.innerHTML = btnLogin;
         window.location.href =  "/index.html";
     });
