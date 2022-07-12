@@ -3,7 +3,7 @@
   <head>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    <link rel="shortcut icon" href="../img/FoodZero.png" type="image/png">
     <link type="text/css" rel="stylesheet" href="../css/styles.css"  media="screen,projection"/>
 
 
@@ -36,39 +36,20 @@
     </section>
     <div class="formulario-pedido">
       <h3>Nuevo pedido</h3>
-      <form action="" method="post" class="formulario-pedido-form">
+      <form action="" method="post" class="formulario-pedido-form" id="formulario-pedido-form">
         <select name="mesa" id="mesaSelect">
-          <option value="-1">Mesas disponibles</option>
         </select>
         <div class="products-individual">
-          <input type="text" placeholder="Producto" name="producto">
-          <input type="text" placeholder="Cantidad" name="cantidad">
+          <input type="text" placeholder="Producto" name="producto1">
+          <input type="text" placeholder="Cantidad" name="cantidad1">
         </div>
         <div class="products-individual">
-          <input type="text" placeholder="Producto" name="producto">
-          <input type="text" placeholder="Cantidad" name="cantidad">
+          <input type="text" placeholder="Producto" name="producto2">
+          <input type="text" placeholder="Cantidad" name="cantidad2">
         </div>
-        <input type="button" value="Agragr más productos" class="addProducts">
         <input type="submit" value="Crear pedido" class="createPedido">
       </form>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <script type="module" src="../js/ordenes/ordenes.js"></script>
   </body>

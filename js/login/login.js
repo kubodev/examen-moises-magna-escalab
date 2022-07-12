@@ -21,18 +21,21 @@ export const logSubmit = async (event) => {
     const tokenifo = await postInfo(login,infoLogin);
     const token = tokenifo.access_token;
     const typeuser = await JSON.parse(atob(tokenifo.access_token.split('.')[1])).roles[0];
+    const typeid = await JSON.parse(atob(tokenifo.access_token.split('.')[1])).id;
+
 
 
     const tokenCustom = {
         type: typeuser,
-        tokenPost: token
+        tokenPost: token,
+        id: typeid
+        
     };
 
     
 
     window.localStorage.setItem('foodzero', JSON.stringify(tokenCustom) );
 
-    console.log();
     window.location.href =  "/pages/ordenes.html";
 }
 

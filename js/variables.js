@@ -13,3 +13,5 @@ export const boxLogin = document.querySelector('.login');
 export const divOrders = document.querySelector('#orders-content');
 
 export const selectTables = document.querySelector('#mesaSelect');
+
+export const formOrders = document.querySelector('#formulario-pedido-form');

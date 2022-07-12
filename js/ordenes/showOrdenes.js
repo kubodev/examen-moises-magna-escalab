@@ -11,7 +11,16 @@ export const setOrders = async (listOrders) => {
     const aux = listOrders; 
     const array = Object.entries(aux);
     const menuCompleto = await getInfo(menu);
+    
+    const listadoNombreProducto = [];
 
+    Object.keys(menuCompleto).forEach(item => {
+        const productos = Object.values(menuCompleto[item]);
+        
+        productos.forEach(product => {
+            listadoNombreProducto.push(product.name);
+        })
+    })
     
     
     const menuListo =  array.map( order => {
@@ -43,20 +52,14 @@ export const setOrders = async (listOrders) => {
         const idOrder = orderOne.id;
         const numMesa = orderOne.table;
 
-        
-        const aux2 = menuCompleto; 
-        const array2 = Object.entries(aux2);
-        const menuCompletoListo =  array2.findIndex( c => c[1].id == 2);
-        
 
-        //Aqui estooooooy
-        console.log(menuCompletoListo);
+
 
         const platos2 = (arrayPlatos) => {
             let htmlPlatos  = "";
             for(let plato of arrayPlatos) {
                 htmlPlatos += `
-                <p>${plato.product}: ${plato.quantity}</p>
+                <p>${listadoNombreProducto[plato.product -1]}: ${plato.quantity}</p>
             `;
             }
             return htmlPlatos;

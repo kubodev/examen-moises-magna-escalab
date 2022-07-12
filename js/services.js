@@ -46,3 +46,24 @@ export const getInfoToken = async (url, token) => {
 
     return info;
 }
+
+export const putInfoToken = async (url, token, data) => {
+
+
+    const response = await fetch(url, {
+        method: 'PUT',
+        headers: {
+            'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(data)
+    });
+
+    if (!response.ok) {
+        const message = `Ha ocurrido un error: ${response.status}`;
+        throw new Error(message);
+    }
+
+    const info = await response.json();
+
+    return info;
+}
