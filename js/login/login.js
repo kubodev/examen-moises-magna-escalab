@@ -15,13 +15,23 @@ export const logSubmit = async (event) => {
 
     const intento = window.localStorage.getItem('intento');
     //si no existe token te devuelve al home
+    
     if(!intento) {
         window.localStorage.setItem('intento', '1' );
         errorDiv.innerHTML = '<p>Usuario y/o contraseña Erronea:<br>quedan 2 intentos</p>'
     }
-    else if (intento === 'bloqueado') {
-        
-    
+    else if (intento == 'bloqueado') {
+        const fechaActual = new Date();
+        const fechaLocalStorage = window.localStorage.getItem('tiempo');
+        const fechaLocalFormart = new Date(fechaLocalStorage);
+
+        console.log(fechaActual, fechaLocalFormart);
+        if(fechaActual < fechaLocalFormart) {
+
+            window.localStorage.removeItem('intento');
+            window.localStorage.removeItem('tiempo');
+        }
+
     } else {
         let intentoInt = parseInt(intento);
 
