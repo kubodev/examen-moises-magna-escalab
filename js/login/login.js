@@ -18,17 +18,37 @@ export const logSubmit = async (event) => {
     if(!intento) {
         window.localStorage.setItem('intento', '1' );
         errorDiv.innerHTML = '<p>Usuario y/o contraseña Erronea:<br>quedan 2 intentos</p>'
+    if (intento === 'bloqueado') {
+        
+        console.log('izi');
     } else {
         let intentoInt = parseInt(intento);
+
         let sumaIntento = intentoInt + 1;
-        errorDiv.innerHTML = `<p>Usuario y/o contraseña Erronea:<br>quedan ${3 - sumaIntento} intentos</p>`;
-        
-        if(sumaIntento >= 3) {
-            const date = new Date();
 
 
+        if(intentoInt >= 2) {
+            const fecha = new Date();
+            const minutos = 15;
+            const fechaconminutos = fecha.setMinutes(fecha.getMinutes() + minutos);
+
+            console.log(fechaconminutos)
+            const nuevafecha = new Date(fechaconminutos);
+            
+            const year = nuevafecha.getFullYear() // return year
+            const month = nuevafecha.getMonth() + 1 // return month(0 - 11)
+            const date = nuevafecha.getDate() // return date (1 - 31)
+            const hours = nuevafecha.getHours() // return number (0 - 23)
+            const minutes = nuevafecha.getMinutes() // return number (0 -59)
+
+            
+            const fechaString =`${date}/${month}/${year} ${hours}:${minutes}`;
+
+
+            
+            errorDiv.innerHTML = `<p>Intenta denuevo<br> ${fechaString}</p>`;
             window.localStorage.setItem('intento', 'bloqueado' );
-            window.localStorage.setItem('tiempo',  );
+            window.localStorage.setItem('tiempo', fechaString);
         } else {
             
             
