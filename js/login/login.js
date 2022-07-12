@@ -18,9 +18,10 @@ export const logSubmit = async (event) => {
     if(!intento) {
         window.localStorage.setItem('intento', '1' );
         errorDiv.innerHTML = '<p>Usuario y/o contraseña Erronea:<br>quedan 2 intentos</p>'
-    if (intento === 'bloqueado') {
+    }
+    else if (intento === 'bloqueado') {
         
-        console.log('izi');
+    
     } else {
         let intentoInt = parseInt(intento);
 
