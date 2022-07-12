@@ -17,3 +17,5 @@ export const selectTables = document.querySelector('#mesaSelect');
 export const formOrders = document.querySelector('#formulario-pedido-form');
 
 export const errorDiv = document.querySelector('.error-form');
+
+export const btnLogin = document.querySelector('#miModal #sendLogin');

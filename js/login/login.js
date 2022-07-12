@@ -1,4 +1,4 @@
-import {user, pass, errorDiv} from "../variables.js";
+import {user, pass, errorDiv, btnLogin} from "../variables.js";
 import {postInfo} from "../services.js";
 import { login } from "../api.js";
 
@@ -21,15 +21,18 @@ export const logSubmit = async (event) => {
         errorDiv.innerHTML = '<p>Usuario y/o contraseña Erronea:<br>quedan 2 intentos</p>'
     }
     else if (intento == 'bloqueado') {
+
+
         const fechaActual = new Date();
         const fechaLocalStorage = window.localStorage.getItem('tiempo');
         const fechaLocalFormart = new Date(fechaLocalStorage);
 
-        console.log(fechaActual, fechaLocalFormart);
-        if(fechaActual < fechaLocalFormart) {
+
+        if(fechaActual > fechaLocalFormart) {
 
             window.localStorage.removeItem('intento');
             window.localStorage.removeItem('tiempo');
+            btnLogin.removeAttribute('disabled');
         }
 
     } else {
@@ -43,7 +46,7 @@ export const logSubmit = async (event) => {
             const minutos = 15;
             const fechaconminutos = fecha.setMinutes(fecha.getMinutes() + minutos);
 
-            console.log(fechaconminutos)
+
             const nuevafecha = new Date(fechaconminutos);
             
             const year = nuevafecha.getFullYear() // return year
@@ -53,9 +56,9 @@ export const logSubmit = async (event) => {
             const minutes = nuevafecha.getMinutes() // return number (0 -59)
 
             
-            const fechaString =`${date}/${month}/${year} ${hours}:${minutes}`;
+            const fechaString =`${date}/${month}/${year} ${hours}:${minutes} hrs`;
 
-
+            btnLogin.setAttribute('disabled', '');
             
             errorDiv.innerHTML = `<p>Intenta denuevo<br> ${fechaString}</p>`;
             window.localStorage.setItem('intento', 'bloqueado' );
