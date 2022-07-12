@@ -27,9 +27,9 @@ const logSubmitOrder = async (event) => {
 
     const order = objtOrder();
     const tokengetLS = valUser();
-    console.log(tokengetLS);
+
     const orderPut = await putInfoToken(orders,tokengetLS, order);
-    console.log(orderPut);
+
 }
 
 
