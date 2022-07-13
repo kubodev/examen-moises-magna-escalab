@@ -24,14 +24,15 @@ export const logSubmit = async (event) => {
 
 
         const fechaActual = new Date();
-        const fechaLocalStorage = window.localStorage.getItem('tiempo');
+        const fechaLocalStorage = window.localStorage.getItem('hora');
         const fechaLocalFormart = new Date(fechaLocalStorage);
 
 
-        if(fechaActual > fechaLocalFormart) {
-
+        if(fechaActual.getTime() > fechaLocalFormart.getTime()) {
+            console.log('entrooo');
             window.localStorage.removeItem('intento');
             window.localStorage.removeItem('tiempo');
+            window.localStorage.removeItem('hora');
             btnLogin.removeAttribute('disabled');
         }
 
@@ -56,13 +57,14 @@ export const logSubmit = async (event) => {
             const minutes = nuevafecha.getMinutes() // return number (0 -59)
 
             
-            const fechaString =`${date}/${month}/${year} ${hours}:${minutes} hrs`;
+            const fechaString =`${date}/${month}/${year} ${hours}:${minutes}`;
 
             btnLogin.setAttribute('disabled', '');
             
             errorDiv.innerHTML = `<p>Intenta denuevo<br> ${fechaString}</p>`;
             window.localStorage.setItem('intento', 'bloqueado' );
             window.localStorage.setItem('tiempo', fechaString);
+            window.localStorage.setItem('hora', nuevafecha);
         } else {
             
             
