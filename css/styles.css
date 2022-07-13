@@ -515,6 +515,9 @@ html {
   align-items: center;
   margin: 20px 0 40px;
 }
+.menu-platos .category:nth-child(odd) .content-menu {
+  flex-direction: row-reverse;
+}
 .menu-platos .category .title {
   margin: 0;
   font-size: 50px;

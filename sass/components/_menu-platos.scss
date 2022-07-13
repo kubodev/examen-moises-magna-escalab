@@ -9,6 +9,11 @@
         flex-direction: column;
         align-items: center;
         margin: 20px 0 40px;
+        &:nth-child(odd) {
+            .content-menu {
+                flex-direction: row-reverse;
+            }
+        }
         .title {
             margin: 0;
             font-size: 50px;
