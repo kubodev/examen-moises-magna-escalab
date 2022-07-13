@@ -1,6 +1,7 @@
-import {user, pass, errorDiv, btnLogin} from "../variables.js";
+import {user, pass, errorDiv} from "../variables.js";
 import {postInfo} from "../services.js";
 import { login } from "../api.js";
+import {textBlocked, validateBloqued} from "../validacion.js";
 
 
 
@@ -21,21 +22,7 @@ export const logSubmit = async (event) => {
         errorDiv.innerHTML = '<p>Usuario y/o contraseña Erronea:<br>quedan 2 intentos</p>'
     }
     else if (intento == 'bloqueado') {
-
-
-        const fechaActual = new Date();
-        const fechaLocalStorage = window.localStorage.getItem('hora');
-        const fechaLocalFormart = new Date(fechaLocalStorage);
-
-
-        if(fechaActual.getTime() > fechaLocalFormart.getTime()) {
-            console.log('entrooo');
-            window.localStorage.removeItem('intento');
-            window.localStorage.removeItem('tiempo');
-            window.localStorage.removeItem('hora');
-            btnLogin.removeAttribute('disabled');
-        }
-
+        validateBloqued();
     } else {
         let intentoInt = parseInt(intento);
 
@@ -43,28 +30,7 @@ export const logSubmit = async (event) => {
 
 
         if(intentoInt >= 2) {
-            const fecha = new Date();
-            const minutos = 15;
-            const fechaconminutos = fecha.setMinutes(fecha.getMinutes() + minutos);
-
-
-            const nuevafecha = new Date(fechaconminutos);
-            
-            const year = nuevafecha.getFullYear() // return year
-            const month = nuevafecha.getMonth() + 1 // return month(0 - 11)
-            const date = nuevafecha.getDate() // return date (1 - 31)
-            const hours = nuevafecha.getHours() // return number (0 - 23)
-            const minutes = nuevafecha.getMinutes() // return number (0 -59)
-
-            
-            const fechaString =`${date}/${month}/${year} ${hours}:${minutes}`;
-
-            btnLogin.setAttribute('disabled', '');
-            
-            errorDiv.innerHTML = `<p>Intenta denuevo<br> ${fechaString}</p>`;
-            window.localStorage.setItem('intento', 'bloqueado' );
-            window.localStorage.setItem('tiempo', fechaString);
-            window.localStorage.setItem('hora', nuevafecha);
+            textBlocked();
         } else {
             
             

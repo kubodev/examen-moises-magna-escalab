@@ -3,7 +3,7 @@ import {getInfo} from "./services.js";
 import {setMenu} from "./showmenu.js";
 import {formLogin, errorDiv} from "./variables.js";
 import {logSubmit} from "./login/login.js";
-import {loginCerrarSession, btnMenu} from "./validacion.js";
+import {loginCerrarSession, btnMenu, isblocked} from "./validacion.js";
 
 const consulta = async (menuarg) => {
     const objetoMenu = await getInfo(menuarg);
@@ -26,6 +26,7 @@ consulta(menu);
 //formulario login
 formLogin.addEventListener('submit', logSubmit);
 document.querySelector('#login').addEventListener('click', ()=>{
+    
     const intento = window.localStorage.getItem('intento');
 
     if(intento) {
@@ -34,7 +35,7 @@ document.querySelector('#login').addEventListener('click', ()=>{
     }
 });
 
-
+isblocked();
   
 
 
