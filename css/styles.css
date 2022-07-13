@@ -603,6 +603,10 @@ html {
   color: #ffffff;
   cursor: pointer;
 }
+.login-user input[type=submit]:disabled {
+  opacity: 0.6;
+  background-color: rgb(68, 61, 61);
+}
 
 .modal {
   background-color: rgba(0, 0, 0, 0.8);

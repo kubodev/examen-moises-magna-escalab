@@ -31,6 +31,10 @@
             background-color: $color-form-btn;
             color: $color-white;
             cursor: pointer;
+            &:disabled {
+              opacity: 0.6;
+              background-color: rgb(68, 61, 61);
+            }
         }
     }
 
